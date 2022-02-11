@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CityService} from './city.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     NavbarComponent,
     MainContainerComponent,
-    HomeComponent
+    HomeComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,

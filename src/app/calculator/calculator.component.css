@@ -1,0 +1,75 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://images.pexels.com/photos/209224/pexels-photo-209224.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: cover;
+  padding-bottom: 30px;
+  width: 99vw;
+  margin: 0px;
+}
+
+.base {
+  background: darkslategray;
+  margin-top: 5vh;
+  border: 3px solid black;
+  width: 50vw;
+  height: 85vh;
+}
+
+.maindisplay {
+  background: rgb(179, 185, 241);
+  height: 26vh;
+  padding: 5% !important;
+  font-size: 64px;
+  text-align: right;
+  font-family: Courier, monospace;
+  overflow: auto;
+}
+
+.subdisplay {
+  border-bottom: 1px solid #0d095c;
+  height: 25%;
+  font-size: 28px;
+  overflow: auto;
+}
+
+.keypad {
+  height: 60%;
+}
+
+.keys {
+  margin: 0;
+  height: 25%;
+  background: whitesmoke;
+  color: grey;
+  padding: 29px;
+  font-size: 32px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.keys:hover {
+  opacity: 1;
+}
+
+.ackey {
+  color: #ffffff;
+  background: #0d095c;
+}
+
+.equalkey {
+  color: #ffffff;
+  background-color: orangered;
+}
+
+.numkey {
+  color: rgb(45, 42, 187);
+  background-color: rgb(154, 153, 241);
+}
+
+.opkey {
+  color: #ffffff;
+  background-color: #0d095c;
+}

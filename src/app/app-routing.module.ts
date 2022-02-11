@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CalculatorComponent } from './calculator/calculator.component';
 import { HomeComponent } from './home/home.component';
 import { MainContainerComponent } from './main-container/main-container.component';
 const routes: Routes = [
   {path:"", redirectTo:"/home", pathMatch:"full"},
   {path:'home', component:HomeComponent},
-  {path:"weather", component:MainContainerComponent}
+  {path:"weather", component:MainContainerComponent},
+  {path:"calculator", component:CalculatorComponent}
 ];
 
 @NgModule({
