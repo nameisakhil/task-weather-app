@@ -150,3 +150,7 @@
 .isActive {
   border: 1.5px solid #0d095c;
 }
+
+.highlighted {
+  text-decoration: line-through;
+}

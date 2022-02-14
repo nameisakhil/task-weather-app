@@ -16,10 +16,9 @@
 
 
                 <li class="todo-item-container">
-                  <input type="checkbox" class="checkbox-input">
+                  <input type="checkbox" class="checkbox-input" (click)="onClickChecked(index)" [checked]="items[index].isChecked" [class.highlighted]="items[index].isChecked">
                   <div class="label-container">
-                    <input type="text" class="text-lable-conatiner" [disabled]="isNotEditing[index]" [(ngModel)] ="items[index]" [class.isActive]="!isNotEditing[index]">
-
+                    <input type="text" class="text-lable-conatiner" [disabled]="isNotEditing[index]" [(ngModel)] ="items[index].text" [class.isActive]="!isNotEditing[index]">
                     <div>
                       <button class="button-inline" (click)="onClickEdit(index)">{{isNotEditing[index] ? "Edit":"Save"}}</button>
                       <button class="button-inline" (click)="deleteTask(index)">Delete</button>

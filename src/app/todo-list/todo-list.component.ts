@@ -10,6 +10,8 @@ export class TodoListComponent implements OnInit {
   public items = [];
   public newTask;
   public isNotEditing = [];
+
+
   constructor() { }
 
   ngOnInit(): void {
@@ -23,6 +25,7 @@ export class TodoListComponent implements OnInit {
     for(let i=0; i < this.items.length; i++){
       this.isNotEditing.push(true)
     }
+
   }
 
 
@@ -31,7 +34,7 @@ export class TodoListComponent implements OnInit {
       if (this.newTask == '') {
       }
       else {
-          this.items.push(this.newTask);
+          this.items.push({text:this.newTask,isChecked:false});
           this.isNotEditing.push(true)
           this.newTask = '';
       }
@@ -52,5 +55,9 @@ export class TodoListComponent implements OnInit {
 
   trackByFn(index){
     return index;
+  }
+
+  onClickChecked(index){
+    this.items[index].isChecked = !this.items[index].isChecked
   }
 }
