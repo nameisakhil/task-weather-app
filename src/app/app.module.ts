@@ -10,6 +10,8 @@ import {CityService} from './city.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -18,14 +20,16 @@ import { CalculatorComponent } from './calculator/calculator.component';
     NavbarComponent,
     MainContainerComponent,
     HomeComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [CityService],
   bootstrap: [AppComponent]
