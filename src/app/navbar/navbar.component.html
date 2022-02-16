@@ -1,5 +1,25 @@
 <nav class="navbar">
   <h1 routerLink="/home" routerLinkActive="active">Pocket Apps</h1>
+  <ul class="nav-items-container">
+    <li class="nav-list-items" routerLink="/weather" routerLinkActive="active">Weather App</li>
+    <li class="nav-list-items" routerLink="/calculator" routerLinkActive="active">Calculator</li>
+    <li class="nav-list-items" routerLink="/todo-list" routerLinkActive="active">Keep Your Task Safe</li>
+  </ul>
+  <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a routerLink="/weather" routerLinkActive="active">Weather App</a></li>
+            <li><a routerLink="/calculator" routerLinkActive="active">Calculator</a></li>
+            <li><a routerLink="/todo-list" routerLinkActive="active">Keep Your Task Safe</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </nav>
 
 

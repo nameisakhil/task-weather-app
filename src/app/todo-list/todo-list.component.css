@@ -2,7 +2,10 @@
 
 .todos-bg-container {
   background-color: #f9fbfe;
-  height: 100vh;
+  padding-bottom: 130px;
+  z-index: 10;
+  margin-left: 10px;
+  margin-top: 30px;
 }
 
 .todos-heading {
@@ -52,13 +55,18 @@
 
 .todo-user-input {
   background-color: white;
-  width: 100%;
+  width: 70%;
+  display: block;
   border-style: solid;
   border-width: 1px;
   border-color: #e4e7eb;
   border-radius: 10px;
   margin-top: 10px;
   padding: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  overflow-y: hidden;
 }
 
 .button {
@@ -114,6 +122,7 @@
   padding-left: 15px;
   padding-right: 15px;
   width: 80vw;
+  padding: 15px;
 }
 
 .checkbox-input {
@@ -123,34 +132,59 @@
   margin-right: 12px;
 }
 
-.checkbox-label {
-  font-family: "Roboto";
-  font-size: 16px;
-  font-weight: 400;
-  width: 82%;
-  margin: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 5px;
-}
-
-.checked {
-  text-decoration: line-through;
-}
-
 .text-lable-conatiner {
   background-color: transparent;
   border: none;
-  font-weight: 500;
+  font-weight: 800;
   font-size: 18px;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 60vw;
+}
+
+.textArea-container {
+  min-height: 60px;
+  height: auto;
+  box-sizing: border-box;
+  max-height: 500px;
+  overflow-y: auto;
+  word-wrap: break-word;
+  height: auto;
+  font-weight: 500;
+  margin-top: 10px;
+  overflow-y: hidden;
+  margin-bottom: 10px;
 }
 
 .isActive {
   border: 1.5px solid #0d095c;
 }
 
-.highlighted {
-  text-decoration: line-through;
+::placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #0d095c;
+}
+
+@media screen and (max-width: 786px) {
+  .todo-user-input {
+    width: 85vw;
+  }
+  .label-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .todos-heading {
+    margin-top: 35px;
+  }
+  .text-lable-conatiner {
+    font-size: 18px;
+  }
+  .textArea-container {
+    font-size: 14px;
+  }
+  .todos-bg-container {
+    padding-bottom: 70px;
+  }
 }

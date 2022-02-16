@@ -6,7 +6,13 @@
               <h1 class="create-task-heading">
                   Create <span class="create-task-heading-subpart">Task</span>
               </h1>
-              <input type="text" id="todoUserInput" class="todo-user-input" placeholder="What needs to be done?" [(ngModel)] = "newTask"/>
+              <input type="text" id="todoUserInput" class="todo-user-input" placeholder="What needs to be done?" [(ngModel)] = "newTask" required/>
+              <textarea
+                autocomplete="off"
+                [(ngModel)]="newDiscription" class="todo-user-input" placeholder="Enter Your Discription" required
+                appTextareaAutoresize
+                ></textarea>
+              <input type="text" class="todo-user-input" [(ngModel)]="newDate" placeholder="Choose Your Date" onfocus="(this.type='date')" required>
               <button class="button" id="addTodoButton" (click)="addToList()">Add</button>
               <h1 class="todo-items-heading">
                   My <span class="todo-items-heading-subpart">Tasks</span>
@@ -18,7 +24,14 @@
                 <li class="todo-item-container">
                   <input type="checkbox" class="checkbox-input" (click)="onClickChecked(index)" [checked]="items[index].isChecked" [class.highlighted]="items[index].isChecked">
                   <div class="label-container">
-                    <input type="text" class="text-lable-conatiner" [disabled]="isNotEditing[index]" [(ngModel)] ="items[index].text" [class.isActive]="!isNotEditing[index]">
+                    <div>
+                      <input type="text" class="text-lable-conatiner" [disabled]="isNotEditing[index]" [(ngModel)] ="items[index].text" [class.isActive]="!isNotEditing[index]">
+                      <textarea
+                        autocomplete="off"
+                        class="text-lable-conatiner textArea-container" [disabled]="isNotEditing[index]" [(ngModel)] ="items[index].description" [class.isActive]="!isNotEditing[index]" appTextareaAutoresize>{{items[index].description}}</textarea>
+                      <input type="text" class="text-lable-conatiner" [disabled]="isNotEditing[index]" [(ngModel)] ="items[index].date" [class.isActive]="!isNotEditing[index]" onfocus="(this.type='date')">
+                    </div>
+
                     <div>
                       <button class="button-inline" (click)="onClickEdit(index)">{{isNotEditing[index] ? "Edit":"Save"}}</button>
                       <button class="button-inline" (click)="deleteTask(index)">Delete</button>

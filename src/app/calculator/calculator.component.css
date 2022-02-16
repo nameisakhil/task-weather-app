@@ -5,8 +5,9 @@
   background-image: url("https://images.pexels.com/photos/209224/pexels-photo-209224.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-size: cover;
   padding-bottom: 30px;
-  width: 99vw;
+  width: 100vw;
   margin: 0px;
+  height: 100vh;
 }
 
 .base {
@@ -14,7 +15,7 @@
   margin-top: 5vh;
   border: 3px solid black;
   width: 50vw;
-  height: 85vh;
+  height: auto;
 }
 
 .maindisplay {
@@ -72,4 +73,15 @@
 .opkey {
   color: #ffffff;
   background-color: #0d095c;
+}
+
+@media screen and (max-width: 768px) {
+  .base {
+    width: 90vw;
+    margin-bottom: 20px;
+  }
+  .keys {
+    font-size: 20px;
+    padding: 20px;
+  }
 }

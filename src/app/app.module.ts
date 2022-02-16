@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FooterComponent } from './footer/footer.component';
+import { TextareaAutoresizeDirective } from './textarea-autoresize.directive';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MainContainerComponent,
     HomeComponent,
     CalculatorComponent,
-    TodoListComponent
+    TodoListComponent,
+    FooterComponent,
+    TextareaAutoresizeDirective
   ],
   imports: [
     BrowserModule,

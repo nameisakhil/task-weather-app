@@ -2,7 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-image: url("https://images.pexels.com/photos/248533/pexels-photo-248533.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 .btn {
@@ -23,6 +28,71 @@
   opacity: 0.7;
 }
 
-.btn::after {
+/* .btn::after {
   background-color: #458eed;
+} */
+
+.card {
+  padding: 20px;
+  border: #0d095c 2px solid;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 400px;
+  height: 400px;
+  margin: 20px;
+}
+
+.card-1 {
+  background-image: url("https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: cover;
+  opacity: 0.8;
+}
+
+.card-2 {
+  background-image: url("https://images.pexels.com/photos/5412432/pexels-photo-5412432.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  opacity: 0.8;
+  background-size: cover;
+}
+
+.card-3 {
+  background-image: url("https://images.pexels.com/photos/5717421/pexels-photo-5717421.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: cover;
+  opacity: 0.8;
+  color: #0d095c;
+  text-shadow: 1px 3px 5px #ffffff;
+  font-weight: 700;
+}
+
+.heading {
+  font-size: 28px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.paragraph {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.c-3-paragraph {
+  color: #1b1c1d;
+}
+
+@media screen and (max-width: 786px) {
+  .card {
+    width: 250px;
+    height: 300px;
+  }
+  .btn {
+    width: 200px;
+    padding: 10px;
+  }
+  .paragraph {
+    color: #f8f7fd;
+  }
 }

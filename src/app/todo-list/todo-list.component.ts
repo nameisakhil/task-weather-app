@@ -9,6 +9,8 @@ import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 export class TodoListComponent implements OnInit {
   public items = [];
   public newTask;
+  public newDiscription;
+  public newDate;
   public isNotEditing = [];
 
 
@@ -31,12 +33,14 @@ export class TodoListComponent implements OnInit {
 
 
   addToList() {
-      if (this.newTask == '') {
+      if (this.newTask =='' || this.newTask ==undefined) {
       }
       else {
-          this.items.push({text:this.newTask,isChecked:false});
+          this.items.push({text:this.newTask,isChecked:false,description:this.newDiscription, date:this.newDate});
           this.isNotEditing.push(true)
           this.newTask = '';
+          console.log(this.items)
+
       }
   }
 
