@@ -81,6 +81,7 @@ export class CalculatorComponent implements OnInit {
       this.subDisplayText = 'ERROR: Invalid Operation';
     }
     this.answered = true;
+    this.operatorSet = false
   }
 
   clearone(){

@@ -188,3 +188,10 @@
     padding-bottom: 70px;
   }
 }
+.save-button {
+  margin-bottom: 10px;
+}
+
+.saved-message {
+  color: #0d095c;
+}

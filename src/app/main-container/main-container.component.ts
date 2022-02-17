@@ -28,19 +28,18 @@ export class MainContainerComponent implements OnInit {
 
 
   getWeatherDetails() {
-    console.log(this.city)
-
     this.cityService.getWeather(this.city).subscribe((data: any) => {
       this.weatherData = data;
       this.didnothaveData = this.weatherData?.success === !true
-      this.backgroundClasses = {
-        "sunny-background": this.weatherData?.current.weather_descriptions[0] === "Sunny",
-        "rainy-background": this.weatherData?.current.weather_descriptions[0] === "Rainy" || this.weatherData?.current.weather_descriptions[0] ==="Patchy rain possible",
-        "cloudy-background": this.weatherData?.current.weather_descriptions[0] === "Cloudy" ||this.weatherData?.current.weather_descriptions[0] === "Partly cloudy",
-        "clear-background":this.weatherData?.current.weather_descriptions[0] === "Clear",
-        "mist-background":this.weatherData?.current.weather_descriptions[0] === "Mist" || this.weatherData?.current.weather_descriptions[0] === "Haze"
+      if(this.weatherData?.success !== false){
+        this.backgroundClasses = {
+          "sunny-background": this.weatherData?.current.weather_descriptions[0] === "Sunny",
+          "rainy-background": this.weatherData?.current.weather_descriptions[0] === "Rainy" || this.weatherData?.current.weather_descriptions[0] ==="Patchy rain possible",
+          "cloudy-background": this.weatherData?.current.weather_descriptions[0] === "Cloudy" ||this.weatherData?.current.weather_descriptions[0] === "Partly cloudy" || this.weatherData?.current.weather_descriptions[0] === "Overcast" ,
+          "clear-background":this.weatherData?.current.weather_descriptions[0] === "Clear",
+          "mist-background":this.weatherData?.current.weather_descriptions[0] === "Mist" || this.weatherData?.current.weather_descriptions[0] === "Haze"
+        }
       }
-      console.log(this.backgroundClasses)
     });
   }
 }

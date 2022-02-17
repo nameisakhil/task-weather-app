@@ -13,37 +13,39 @@
       >
       <button type="button" class="search-button" (click)="getWeatherDetails()">Search</button>
     </div>
-    <span class="error-msg">{{weatherData?.success === false ? "Please enter a valid Location":""}}</span>
-
-    <div class="content-container" [class.display-none] = 'didnothaveData'  >
-      <div class="temp-content">
-        <p class="content">
-          Location: <span class="data">{{this.weatherData?.location.name}}</span>
-        </p>
-        <p class="content">
-          Region: <span class="data">{{this.weatherData?.location.region}}</span>
-        </p>
-        <p class="content">
-          Country: <span class="data">{{this.weatherData?.location.country}}</span>
-        </p>
-        <p class="content">
-          Temperature: <span class="data">{{this.weatherData?.current.temperature}}°C</span>
-        </p>
-        <p class="content">
-          Time Absorved: <span class="data">{{this.weatherData?.current.observation_time}}</span>
-        </p>
-      </div>
-      <div class="image-container">
-        <img src={{this.weatherData?.current.weather_icons[0]}} alt="icon"  class="icon">
-        <p class="content">{{this.weatherData?.current.weather_descriptions[0]}}</p>
-      </div>
-
-    </div>
-
-    <ng-template  #elseBlock>
-      <h2 class="data">Error Occures Please enter the valid Input</h2>
-
+    <p *ngIf="weatherData === undefined else ifBlock"></p>
+    <ng-template #ifBlock>
+      <span class="error-msg" *ngIf="weatherData?.success === false else elseBlock">Please enter a valid Location</span>
     </ng-template>
+
+    <ng-template #elseBlock>
+      <div class="content-container" [class.display-none] = 'didnothaveData'  >
+        <div class="temp-content">
+          <p class="content">
+            Location: <span class="data">{{this.weatherData?.location.name}}</span>
+          </p>
+          <p class="content">
+            Region: <span class="data">{{this.weatherData?.location.region}}</span>
+          </p>
+          <p class="content">
+            Country: <span class="data">{{this.weatherData?.location.country}}</span>
+          </p>
+          <p class="content">
+            Temperature: <span class="data">{{this.weatherData?.current.temperature}}°C</span>
+          </p>
+          <p class="content">
+            Time Absorved: <span class="data">{{this.weatherData?.current.observation_time}}</span>
+          </p>
+        </div>
+        <div class="image-container">
+          <img src={{this.weatherData?.current.weather_icons[0]}} alt="icon"  class="icon">
+          <p class="content">{{this.weatherData?.current.weather_descriptions[0]}}</p>
+        </div>
+
+      </div>
+    </ng-template>
+
+
 
   </div>
 

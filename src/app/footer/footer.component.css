@@ -26,3 +26,29 @@ h1 {
   display: inline-block;
   margin-left: 30px;
 }
+
+.details {
+  display: flex;
+}
+
+.details-content {
+  margin-right: 30px;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 786px) {
+  h3 {
+    font-size: 8px;
+  }
+  .icon {
+    font-size: 18px;
+  }
+  .details-content {
+    margin-left: 10px;
+    margin-right: 0px;
+  }
+}

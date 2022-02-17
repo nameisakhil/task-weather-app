@@ -18,9 +18,6 @@
                   My <span class="todo-items-heading-subpart">Tasks</span>
               </h1>
               <ul class="todo-items-container" id="todoItemsContainer" *ngFor="let x of items; let index = index;trackBy:trackByFn" >
-
-
-
                 <li class="todo-item-container">
                   <input type="checkbox" class="checkbox-input" (click)="onClickChecked(index)" [checked]="items[index].isChecked" [class.highlighted]="items[index].isChecked">
                   <div class="label-container">
@@ -40,7 +37,8 @@
 
                 </li>
               </ul>
-              <button class="button" id="saveTodoButton" (click)="saveTasks()">Save</button>
+              <button class="button save-button" id="saveTodoButton" (click)="saveTasks()">Save</button>
+              <p class="saved-message">{{isSaved && "Your changes are saved successfully" }}</p>
           </div>
       </div>
   </div>

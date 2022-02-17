@@ -12,6 +12,7 @@ export class TodoListComponent implements OnInit {
   public newDiscription;
   public newDate;
   public isNotEditing = [];
+  public isSaved;
 
 
   constructor() { }
@@ -39,22 +40,26 @@ export class TodoListComponent implements OnInit {
           this.items.push({text:this.newTask,isChecked:false,description:this.newDiscription, date:this.newDate});
           this.isNotEditing.push(true)
           this.newTask = '';
-          console.log(this.items)
-
+          this.newDiscription='';
+          this.newDate=undefined;
+          this.isSaved= undefined
       }
   }
 
 
   deleteTask(index) {
       this.items.splice(index, 1);
+      this.isSaved = undefined
   }
 
   saveTasks(){
     localStorage.setItem("items", JSON.stringify(this.items))
+    this.isSaved = true
   }
 
   onClickEdit(index){
     this.isNotEditing[index] = !this.isNotEditing[index]
+    this.isSaved = undefined
   }
 
   trackByFn(index){
